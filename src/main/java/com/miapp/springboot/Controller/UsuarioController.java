@@ -34,7 +34,9 @@ public class UsuarioController {
     
     // End point Usuario
     @PostMapping ("/new/usuario")
-    public String agregarUsuario(@RequestBody Usuario us, @RequestHeader(value="Authorization")String token){
+    public String agregarUsuario(@RequestBody Usuario us,
+          @RequestHeader(value="Authorization")String token
+    ){
         //si token valido
         if(!jwtUtil.validity(token)){return "FAIL";}
         //si el usuario ya existe
